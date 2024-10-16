@@ -6,6 +6,15 @@ const messages = [
 
 export default function App () {
   const step = 1;
+  
+  function handlePrevious () {
+    alert('Previous step');
+  }
+  
+  function handleNext () {
+    alert('Next step');
+  }
+  
   return (
     <div className="steps">
       <div className="numbers">
@@ -17,8 +26,19 @@ export default function App () {
       <p className="message">Step {step}: {messages[step - 1]}</p>
       
       <div className="buttons">
-        <button style={{backgroundColor: '#7950f2', color: '#fff'}}>Previous</button>
-        <button style={{backgroundColor: '#7950f2', color: '#fff'}}>Next</button>
+        <button
+          // pass in the handlePrevious function, DO NOT call it (do not add the parentheses)
+          onClick={handlePrevious}
+          // onMouseEnter={() => console.log('Hovered')}
+          style={{backgroundColor: '#7950f2', color: '#fff'}}>
+          Previous
+          </button>
+        <button
+          // pass in the handleNext function, DO NOT call it (do not add the parentheses)
+          onClick={handleNext}
+          style={{backgroundColor: '#7950f2', color: '#fff'}}>
+          Next
+        </button>
       </div>
     </div>
   );
